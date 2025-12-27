@@ -1,0 +1,469 @@
+[
+  {
+    "title": "Adventure of a Lifetime",
+    "creator": "Coldplay",
+    "type": "song",
+    "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "Shab (شب)",
+    "creator": "Mohsen Namjoo",
+    "type": "song",
+    "mood": "sadness",
+    "language": "fa"
+  },
+  {
+    "title": "Inside Out",
+    "creator": "Pete Docter",
+    "type": "movie",
+    "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "La La Land",
+    "creator": "Damien Chazelle",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Abr Mibarad (ابر می‌بارد)",
+    "creator": "Homayoun Shajarian",
+    "type": "song",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Lose Yourself",
+    "creator": "Eminem",
+    "type": "song",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Inception",
+    "creator": "Christopher Nolan",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Cheshmaye Khis (چشم‌های خیس)",
+    "creator": "Sirvan Khosravi",
+    "type": "song",
+    "mood": "neutral",
+    "language": "fa"
+  },
+  {
+    "title": "The Social Network",
+    "creator": "David Fincher",
+    "type": "movie",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Zedbazi - Tabestoon Kootahe",
+    "creator": "Zedbazi",
+    "type": "song",
+    "mood": "joy",
+    "language": "fa"
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "creator": "George Miller",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Sorsorak (سرسره)",
+    "creator": "Reza Yazdani",
+    "type": "song",
+    "mood": "anger",
+    "language": "fa"
+  },
+  {
+    "title": "Kimi no Na wa (Your Name)",
+    "creator": "Makoto Shinkai",
+    "type": "movie",
+    "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "Echoes of Silence",
+    "creator": "The Weeknd",
+    "type": "song",
+    "mood": "sadness",
+    "language": "en"
+  },
+  {
+    "title": "About Elly (درباره الی)",
+    "creator": "Asghar Farhadi",
+    "type": "movie",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Cafe Setareh (کافه ستاره)",
+    "creator": "Saman Moghadam",
+    "type": "movie",
+    "mood": "neutral",
+    "language": "fa"
+  },
+  {
+    "title": "Whiplash",
+    "creator": "Damien Chazelle",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Nothing Else Matters",
+    "creator": "Metallica",
+    "type": "song",
+    "mood": "sadness",
+    "language": "en"
+  },
+  {
+    "title": "Bidar Sho (بیدار شو)",
+    "creator": "Moein Z",
+    "type": "song",
+    "mood": "excitement",
+    "language": "fa"
+  },
+  {
+    "title": "Silence",
+    "creator": "Martin Scorsese",
+    "type": "movie",
+    "mood": "sadness",
+    "language": "en"
+  },
+  {
+    "title": "Happy",
+    "creator": "Pharrell Williams",
+    "type": "song", "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "Paddington 2",
+    "creator": "Paul King",
+    "type": "movie",
+    "mood": "joy", "language": "en"
+  },
+  {
+    "title": "Dokhtare Darya (دختر دریا)",
+    "creator": "Googoosh",
+    "type": "song",
+    "mood": "joy",
+    "language": "fa"
+  },
+  {
+    "title": "Singin' in the Rain",
+    "creator": "Gene Kelly",
+    "type": "movie",
+    "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "Someone Like You",
+    "creator": "Adele",
+    "type": "song",
+    "mood": "sadness",
+    "language": "en"
+  },
+  {
+    "title": "Gole Yakh (گل یخ)",
+    "creator": "Kourosh Yaghmaei",
+    "type": "song",
+    "mood": "sadness",
+    "language": "fa"
+  },
+  {
+    "title": "Manchester by the Sea",
+    "creator": "Kenneth Lonergan",
+    "type": "movie",
+    "mood": "sadness",
+    "language": "en"
+  },
+  {
+    "title": "Killing in the Name",
+    "creator": "Rage Against the Machine",
+    "type": "song",
+    "mood": "anger",
+    "language": "en"
+  },
+  {
+    "title": "Ye Mosht Sarbaz (یه مشت سرباز)",
+    "creator": "Hichkas",
+    "type": "song",
+    "mood": "anger",
+    "language": "fa"
+  },
+  {
+    "title": "Joker",
+    "creator": "Todd Phillips",
+    "type": "movie",
+    "mood": "anger",
+    "language": "en"
+  },
+  {
+    "title": "Get Out",
+    "creator": "Jordan Peele",
+    "type": "movie",
+    "mood": "fear",
+    "language": "en"
+  },
+  {
+    "title": "Under the Shadow (زیر سایه)",
+    "creator": "Babak Anvari",
+    "type": "movie",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Thriller",
+    "creator": "Michael Jackson",
+    "type": "song",
+    "mood": "fear",
+    "language": "en"
+  },
+  {
+    "title": "Weightless",
+    "creator": "Marconi Union",
+    "type": "song",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Taste of Cherry (طعم گیلاس)",
+    "creator": "Abbas Kiarostami",
+    "type": "movie",
+    "mood": "neutral",
+    "language": "fa"
+  },
+  {
+    "title": "Porcelain",
+    "creator": "Moby",
+    "type": "song",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Can't Hold Us",
+    "creator": "Macklemore & Ryan Lewis",
+    "type": "song",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "The Nights",
+    "creator": "Avicii",
+    "type": "song",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Top Gun: Maverick",
+    "creator": "Joseph Kosinski",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Gentleman (جنتلمن)",
+    "creator": "Sasy",
+    "type": "song",
+    "mood": "excitement",
+    "language": "fa"
+  },
+  {
+    "title": "Morqe Sahar (مرغ سحر)",
+    "creator": "Mohammad Reza Shajarian",
+    "type": "song",
+    "mood": "sadness",
+    "language": "fa"
+  },
+  {
+    "title": "Blade Runner 2049",
+    "creator": "Denis Villeneuve",
+    "type": "movie",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Interstellar",
+    "creator": "Christopher Nolan",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Baraye (برای)",
+    "creator": "Shervin Hajipour",
+    "type": "song",
+    "mood": "sadness",
+    "language": "fa"
+  },
+  {
+    "title": "Don't Stop Me Now",
+    "creator": "Queen",
+    "type": "song",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Marmoulak (مارمولک)",
+    "creator": "Kamal Tabrizi",
+    "type": "movie",
+    "mood": "joy",
+    "language": "fa"
+  },
+  {
+    "title": "Fight Club",
+    "creator": "David Fincher",
+    "type": "movie",
+    "mood": "anger",
+    "language": "en"
+  },
+  {
+    "title": "Sartane (سرکوب)",
+    "creator": "Yas",
+    "type": "song",
+    "mood": "anger",
+    "language": "fa"
+  },
+  {
+    "title": "A Quiet Place",
+    "creator": "John Krasinski",
+    "type": "movie",
+    "mood": "fear",
+    "language": "en"
+  },
+  {
+    "title": "Shab-e Bist-o-Noh (شب بیست و نهم)",
+    "creator": "Hamid Rakhshani",
+    "type": "movie",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Imagine",
+    "creator": "John Lennon",
+    "type": "song",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Sib (سیب)",
+    "creator": "Simin Ghanem",
+    "type": "song",
+    "mood": "neutral",
+    "language": "fa"
+  },
+  {
+    "title": "Toy Story",
+    "creator": "John Lasseter",
+    "type": "movie",
+    "mood": "joy",
+    "language": "en"
+  },
+  {
+    "title": "Barobax - Soosan Khanoom",
+    "creator": "Barobax",
+    "type": "song",
+    "mood": "joy",
+    "language": "fa"
+  },
+  {
+    "title": "Numb",
+    "creator": "Linkin Park",
+    "type": "song",
+    "mood": "anger",
+    "language": "en"
+  },
+  {
+    "title": "Metri Shesh Va Nim (متری شیش و نیم)",
+    "creator": "Saeed Roustayi",
+    "type": "movie",
+    "mood": "anger",
+    "language": "fa"
+  },
+  {
+    "title": "The Shining",
+    "creator": "Stanley Kubrick",
+    "type": "movie",
+    "mood": "fear",
+    "language": "en"
+  },
+  {
+    "title": "Khaabgah-e Dokhtaran (خوابگاه دختران)",
+    "creator": "Mohammad Hossein Latifi",
+    "type": "movie",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Eye of the Tiger",
+    "creator": "Survivor",
+    "type": "song",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "creator": "Queen",
+    "type": "song",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Jodaeiye Nader az Simin (جدایی نادر از سیمین)",
+    "creator": "Asghar Farhadi",
+    "type": "movie",
+    "mood": "sadness",
+    "language": "fa"
+  },
+  {
+    "title": "Bad Guy",
+    "creator": "Billie Eilish",
+    "type": "song",
+    "mood": "neutral",
+    "language": "en"
+  },
+  {
+    "title": "Hame Chi Aroome",
+    "creator": "Hamid Talebzadeh",
+    "type": "song",
+    "mood": "joy",
+    "language": "fa"
+  },
+  {
+    "title": "The Dark Knight",
+    "creator": "Christopher Nolan",
+    "type": "movie",
+    "mood": "excitement",
+    "language": "en"
+  },
+  {
+    "title": "Ejdaha Vared Mishavad (اژدها وارد می‌شود)",
+    "creator": "Mani Haghighi",
+    "type": "movie",
+    "mood": "fear",
+    "language": "fa"
+  },
+  {
+    "title": "Smells Like Teen Spirit",
+    "creator": "Nirvana",
+    "type": "song",
+    "mood": "anger",
+    "language": "en"
+  },
+  {
+    "title": "Lantouri (لانتوری)",
+    "creator": "Reza Dormishian",
+    "type": "movie",
+    "mood": "anger",
+    "language": "fa"
+  }
+]

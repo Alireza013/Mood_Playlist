@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="{{ ui_lang }}" dir="{{ 'rtl' if ui_lang == 'fa' else 'ltr' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Playlist</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .analytics-section {
+            margin-top: 24px;
+            background: var(--card);
+            border: 1px solid var(--card-strong);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(12px);
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .chart-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-strong);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chart-card h4 {
+            margin: 0 0 16px 0;
+            font-size: 14px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body data-theme="{{ theme }}">
+    <div class="background-veil"></div>
+    <main class="page">
+        <header class="hero">
+            <div class="hero-top">
+                <div>
+                    <p class="eyebrow">{{ ui.eyebrow }}</p>
+                    <h1>{{ ui.headline }}<br><span class="accent">{{ ui.accent }}</span></h1>
+                    <p class="lede">{{ ui.lede }}</p>
+                    <div class="pill-row">
+                        {% for m in ui.moods %}
+                        <span class="pill">{{ m }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="lang-switch">
+                    <span class="muted">{{ ui.lang_label }}:</span>
+                    <a class="lang-btn {% if ui_lang == 'en' %}active{% endif %}" href="/?lang=en&theme={{ theme }}">{{ ui.lang_en }}</a>
+                    <a class="lang-btn {% if ui_lang == 'fa' %}active{% endif %}" href="/?lang=fa&theme={{ theme }}">{{ ui.lang_fa }}</a>
+                    <span class="muted divider">|</span>
+                    <a class="theme-btn {% if theme == 'light' %}active{% endif %}" title="Light" href="/?lang={{ ui_lang }}&theme=light">&#9728;</a>
+                    <a class="theme-btn {% if theme == 'dark' %}active{% endif %}" title="Dark" href="/?lang={{ ui_lang }}&theme=dark">&#9790;</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Prediction Panel -->
+        <section class="panel">
+            <form class="form" action="/predict?lang={{ ui_lang }}" method="post">
+                <input type="hidden" name="ui_lang" value="{{ ui_lang }}">
+                <input type="hidden" name="theme" value="{{ theme }}">
+                <label for="text">{{ ui.text_label }}</label>
+                <textarea id="text" name="text" rows="4" placeholder="{{ ui.placeholder }}" required>{{ text or '' }}</textarea>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label>{{ ui.type_label }}</label>
+                        <div class="option-group">
+                            <label class="option-pill">
+                                <input type="radio" name="media_type" value="" {% if not media_type %}checked{% endif %}>
+                                <span>{{ ui.type_any }}</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="media_type" value="song" {% if media_type=='song' %}checked{% endif %}>
+                                <span>{{ ui.type_song }}</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="media_type" value="movie" {% if media_type=='movie' %}checked{% endif %}>
+                                <span>{{ ui.type_movie }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>{{ ui.response_lang_label }}</label>
+                        <div class="option-group">
+                            <label class="option-pill">
+                                <input type="radio" name="response_language" value="both" {% if response_language=='both' or not response_language %}checked{% endif %}>
+                                <span>{{ ui.response_lang_any }}</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="response_language" value="fa" {% if response_language=='fa' %}checked{% endif %}>
+                                <span>{{ ui.response_lang_fa }}</span>
+                            </label>
+                            <label class="option-pill">
+                                <input type="radio" name="response_language" value="en" {% if response_language=='en' %}checked{% endif %}>
+                                <span>{{ ui.response_lang_en }}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta">{{ ui.cta }}</button>
+            </form>
+
+            {% if result %}
+            <div class="results">
+                <div class="stat">
+                    <p class="stat-label">{{ ui.detected_language }}</p>
+                    <p class="stat-value">{{ result.language }}</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-label">{{ ui.mood }}</p>
+                    {% set mood_display = ui.mood_labels.get(result.prediction.mood, result.prediction.mood) %}
+                    <p class="stat-value mood">{{ mood_display }}</p>
+                    <p class="stat-meta">{{ ui.model_meta }}: {{ result.prediction.label }} • {{ ui.source_meta }}: {{ result.prediction.source }}</p>
+                </div>
+                <div class="grid">
+                    {% for rec in result.recommendations %}
+                    <article class="card">
+                        <p class="tag">{{ rec.type }}</p>
+                        <h3>{{ rec.title }}</h3>
+                        <p class="muted">{{ rec.creator }}</p>
+                        {% set card_mood = ui.mood_labels.get(rec.mood, rec.mood) %}
+                        <p class="pill small">{{ card_mood }}</p>
+                        <p class="muted">{{ ui.cards_lang }}: {{ rec.language }}</p>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Analytics Panel -->
+        <section class="analytics-section">
+            <h2>{{ ui.analytics_title }}</h2>
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>{{ ui.chart_mood }}</h4>
+                    <div class="chart-container">
+                        <canvas id="chartMood"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h4>{{ ui.chart_lang }}</h4>
+                    <div class="chart-container">
+                        <canvas id="chartLang"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Data Injection Script -->
+    <script id="stats-data" type="application/json">
+        {{ stats | tojson | safe }}
+    </script>
+    <script id="mood-labels-data" type="application/json">
+        {{ ui.mood_labels | tojson | safe }}
+    </script>
+    <script id="lang-labels-data" type="application/json">
+        {{ ui.language_labels | tojson | safe }}
+    </script>
+
+    <script>
+        const theme = "{{ theme }}";
+        let stats = {};
+        let moodLabels = {};
+        let langLabels = {};
+
+        function safeParse(id, fallback) {
+            try {
+                const el = document.getElementById(id);
+                if (el && el.textContent.trim()) {
+                    return JSON.parse(el.textContent);
+                }
+            } catch (e) {
+                console.warn(`Could not parse JSON for ${id}`, e);
+            }
+            return fallback;
+        }
+
+        stats = safeParse('stats-data', {});
+        moodLabels = safeParse('mood-labels-data', {});
+        langLabels = safeParse('lang-labels-data', {});
+        
+        // Colors compatible with dark/light themes
+        const colors = {
+            joy: '#fbbf24',
+            sadness: '#3b82f6', 
+            anger: '#ef4444',
+            fear: '#8b5cf6',
+            neutral: '#94a3b8',
+            excitement: '#10b981',
+            text: theme === 'light' ? '#374151' : '#e2e8f0'
+        };
+
+        Chart.defaults.color = colors.text;
+        Chart.defaults.borderColor = theme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
+        Chart.defaults.font.family = "'Space Grotesk', 'Vazirmatn', sans-serif";
+
+        if (stats && stats.moods) {
+            // Mood Chart
+            new Chart(document.getElementById('chartMood'), {
+                type: 'doughnut',
+                data: {
+                    // Translate the keys (joy, sadness...) using the moodLabels map
+                    labels: Object.keys(stats.moods).map(key => moodLabels[key] || key),
+                    datasets: [{
+                        data: Object.values(stats.moods),
+                        backgroundColor: Object.keys(stats.moods).map(m => colors[m] || '#ccc'),
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { 
+                            position: 'right', 
+                            labels: { 
+                                boxWidth: 10, 
+                                usePointStyle: true,
+                                font: { family: "'Space Grotesk', 'Vazirmatn', sans-serif" }
+                            } 
+                        } 
+                    }
+                }
+            });
+
+            // Language Chart
+            new Chart(document.getElementById('chartLang'), {
+                type: 'bar',
+                data: {
+                    // Translate language keys (en, fa...) using langLabels map
+                    labels: Object.keys(stats.languages).map(key => langLabels[key] || key.toUpperCase()),
+                    datasets: [{
+                        label: 'Count',
+                        data: Object.values(stats.languages),
+                        backgroundColor: '#8b5cf6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { display: false } },
+                        y: { beginAtZero: true, grid: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
