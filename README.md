@@ -22,7 +22,7 @@ The project features a hybrid classification engine (Rule-based + ML), a respons
 
 | **Dark Theme (English)** | **Light Theme (Persian)** |
 |:------------------------:|:-------------------------:|
-| ![Dark Theme UI](screenshots/dark-theme.png) | ![Light Theme UI](screenshots/light-theme.png) |
+| ![Dark Theme UI](mood_playlist/screenshots/dark-theme.png) | ![Light Theme UI](mood_playlist/screenshots/light-theme.png) |
 
 ## 📂 Project Structure
 
