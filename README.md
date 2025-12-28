@@ -18,6 +18,12 @@ The project features a hybrid classification engine (Rule-based + ML), a respons
     * **Dark/Light Themes**: Toggleable visual themes.
     * **RTL/LTR Support**: Proper layout adjustments for Persian vs. English.
 
+## 📸 Screenshots
+
+| **Dark Theme (English)** | **Light Theme (Persian)** |
+|:------------------------:|:-------------------------:|
+| ![Dark Theme UI](screenshots/dark-theme.png) | ![Light Theme UI](screenshots/light-theme.png) |
+
 ## 📂 Project Structure
 
 ```text
@@ -84,7 +90,4 @@ If you prefer smaller footprints, swap in other text-emotion models and update `
 
 ## Dev/testing
 - Lint/type-check as you prefer (`ruff`, `mypy`).
-- Minimal unit tests can be run via `pytest` (add to deps):
-```bash
-pytest
-```
+- Minimal unit tests can be run via `pytest`
